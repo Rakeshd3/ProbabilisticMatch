@@ -1,0 +1,16 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+}
+h2 {
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: 0.5rem;
+    margin-top: 2rem;
+}
+pre {
+    background: #f1f1f1;
+    padding: 1rem;
+    border-radius: 5px;
+    overflow-x: auto;
+}
