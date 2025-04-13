@@ -20,7 +20,7 @@ try:
     import numpy as np
     import spacy
     from sqlalchemy.dialects import registry
-    from query_final_3_0 import *
+    from queries import *
     import recordlinkage as rl
     from recordlinkage.preprocessing import clean
     from sqlalchemy.sql import text as sa_text
