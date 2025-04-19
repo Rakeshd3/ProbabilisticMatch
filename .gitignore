@@ -1,0 +1,4 @@
+# Ignore logs and keys
+*.log
+*.p8
+*.pem
