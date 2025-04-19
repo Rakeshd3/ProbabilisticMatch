@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Probabilistic Customer Matching Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="style_portfolio.css" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs"></script>
+  <script>mermaid.initialize({ startOnLoad: true });</script>
+</head>
+<body class="bg-light">
+  <header class="bg-primary text-white p-4 mb-4">
+    <div class="container">
+      <h1 class="display-5">Probabilistic Customer Matching System</h1>
+      <p class="lead">Advanced Record Linkage Pipeline | Python · Snowflake · NLP · PySpark</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="mb-5">
+      <h2>Project Overview</h2>
+      <p><strong>Business Challenge:</strong> Resolve 2.4M+ unmatched records annually, recover $18M+ revenue, and reduce manual effort by 85%.</p>
+      <p><strong>Technical Solution:</strong></p>
+      <ul>
+        <li>92% accurate match recovery over rule-based systems</li>
+        <li>50M+ records processed daily with 99.4% match accuracy</li>
+        <li>Integrated Snowflake pipeline with automated reconciliation</li>
+      </ul>
+    </section>
+
+    <section class="mb-5">
+      <h2>System Architecture</h2>
+      <div class="mermaid">
+        graph LR
+        A[Source Systems] --> B[Snowflake Data Warehouse]
+        B --> C[Matching Engine]
+        C --> D[Results Validation]
+        D --> E[(Production Database)]
+        D --> F[Audit Reports]
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2>Technical Highlights</h2>
+      <p><strong>Core Matching Algorithm:</strong></p>
+      <pre><code class="language-python">def probabilistic_match(reference_df, unmatched_df):
+    indexer = rl.index.SortedNeighbourhood('customer_name', window=5)
+    candidate_pairs = indexer.index(reference_df, unmatched_df)
+
+    comparer = rl.Compare()
+    comparer.string('customer_name', 'customer_name', method='jaro_winkler')
+    comparer.string('city', 'city', method='levenshtein')
+    comparer.numeric('zip_code', 'zip_code', method='gauss')
+
+    features = comparer.compute(candidate_pairs, reference_df, unmatched_df)
+    return features[features.sum(axis=1) > matching_threshold]</code></pre>
+
+      <table class="table table-bordered mt-4">
+        <thead class="table-light">
+          <tr><th>Feature</th><th>Implementation</th><th>Benefit</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Fuzzy Matching</td><td>Jaro-Winkler, Levenshtein</td><td>38% match lift</td></tr>
+          <tr><td>NLP Cleaning</td><td>spaCy + dictionaries</td><td>62% FP reduction</td></tr>
+          <tr><td>Parallel Processing</td><td>Chunked Snowflake loading</td><td>&lt;30 min/50M records</td></tr>
+          <tr><td>Validation</td><td>Cross-dataset reconciliation</td><td>100% integrity</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="mb-5">
+      <h2>Performance Metrics</h2>
+      <ul>
+        <li><strong>Match Accuracy:</strong> 99.4%</li>
+        <li><strong>Speed:</strong> 28,000 records/sec</li>
+        <li><strong>Match Rate Improvement:</strong> +92%</li>
+        <li><strong>Cost Savings:</strong> $240K/year</li>
+      </ul>
+    </section>
+
+    <section class="mb-5">
+      <h2>Match Results Pie</h2>
+      <div class="mermaid">
+        pie title Match Results
+          "High Confidence" : 84
+          "Medium Confidence" : 12
+          "Manual Review" : 4
+      </div>
+    </section>
+
+    <section class="mb-5">
+      <h2>Source Code</h2>
+      <a href="" class="btn btn-outline-primary">GitHub</a>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 text-muted border-top">
+
+        <div class="bottom-container">
+    <a class="footer-link" href="https://www.linkedin.com/in/rakeshdash007"><i class="fab fa-linkedin"></i> LinkedIn</a>
+
+        </div>
+  </footer>
+</body>
+</html>
