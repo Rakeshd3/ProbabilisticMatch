@@ -1,0 +1,1 @@
+SELECT ID, NAME, DOB FROM your_table
