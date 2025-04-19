@@ -1,0 +1,11 @@
+Entity_ID,Original_Name,Matched_Name,Match_Score,Match_Level,Justification
+C001,"Tata Steel Ltd.","Tata Steel",100,"Exact Match","Identical after normalization"
+C002,"Tata Steels Limited","Tata Steel",96,"Near Match","Plural form and suffix normalized"
+C003,"TATA STEEL","Tata Steel",100,"Exact Match","Case normalized"
+C004,"Tata Steel Pvt Ltd","Tata Steel",95,"Near Match","Suffix removed"
+C005,"Tata Steeel","Tata Steel",88,"Probable Match","Typo corrected"
+C006,"Tata Steel Corporation","Tata Steel",90,"Probable Match","Suffix removed"
+C007,"TataSteel","Tata Steel",92,"Near Match","Spacing corrected"
+C008,"Tata Steel & Co.","Tata Steel",85,"Probable Match","Special characters removed"
+C009,"Tata Steel Ltd","Tata Steel",100,"Exact Match","Suffix removed"
+C010,"Tata Steel Limited","Tata Steel",100,"Exact Match","Suffix removed"
